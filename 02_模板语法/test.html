@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_模板语法</title>
+</head>
+<body>
+
+<div id="app">
+  <h2>1.双大括号表达式</h2>
+  <p >{{msg}}</p>
+  <p>{{msg.toUpperCase()}}</p>
+  <p v-html="msg"></p>
+
+  <h2>2/</h2>
+  <img :src="imgUrl">
+
+  <h2>3/</h2>
+  <button @click="test">test1</button>
+  <button @click="test2(msg)">test2</button>
+
+</div>
+
+
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el:'#app',
+    data: {
+      msg:'<a href="http://www.atguigu.com"> I will kill you</a>',
+      imgUrl:'https://cn.vuejs.org/images/logo.png'
+    },
+    methods: {
+      test(){
+        alert('hehe')
+      },
+      test2(content){
+        alert(content);
+      }
+    }
+  })
+</script>
+</body>
+</html>
